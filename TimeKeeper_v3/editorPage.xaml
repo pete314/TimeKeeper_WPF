@@ -1,0 +1,104 @@
+﻿<phone:PhoneApplicationPage x:Class="TimeKeeper_v3.editorPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            SupportedOrientations="Portrait"
+                            Orientation="Portrait"
+                            mc:Ignorable="d"
+                            shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot"
+          d:DataContext="{Binding Items[0]}"
+          Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0"
+                    Margin="12,17,0,28">
+            <TextBlock Text="TimeKeeper"
+                       TextAlignment="Center"
+                       Style="{StaticResource PhoneTextNormalStyle}" />
+            <TextBlock Text="Edit/Add"
+                       Margin="9,2,0,0"
+                       TextAlignment="Center"
+                       Style="{StaticResource PhoneTextSubtleStyle}" />
+          </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanelx10"
+              Grid.Row="1"
+              Margin="12,0,12,0">
+            <StackPanel>
+                <TextBlock TextWrapping="Wrap"
+                           Text="Item Title" 
+                           Margin="10,0,0,0"/>
+                <toolkit:PhoneTextBox x:Name="editorPageTitle"
+                                      Height="72"
+                                      TextWrapping="Wrap"
+                                      Text="{Binding Title}" 
+                                      Hint="Task Title"/>
+                <!--<TextBlock TextWrapping="Wrap"
+                           Text="Item Title" 
+                           Margin="10,0,0,0"/>
+                <toolkit:PhoneTextBox x:Name="editorPageDate"
+                                        Height="72"
+                         TextWrapping="Wrap"
+                         Text="{Binding tdDate}" 
+                         Hint="Date"/>
+                -->
+                <toolkit:DatePicker Header="Finish date"
+                                    x:Name="editorPageDate"
+                                    Value="{Binding tdDate}"/>
+                <!--WP8 Toolkit import-->
+                <!--
+                <toolkit:ListPicker x:Name="listPicker">
+                    <toolkit:ListPickerItem x:Name="Important_Soon"
+                                            Content="Important [Soon]" />
+                    <toolkit:ListPickerItem x:Name="Important_not_soon"
+                                            Content="Important [Not Soon]" />
+                    <toolkit:ListPickerItem x:Name="Not_Important_Soon"
+                                            Content="Not Important [Soon]" />
+                    <toolkit:ListPickerItem x:Name="Not_Important_Not_Soon"
+                                            Content="Not Important [Not Soon]" />
+                </toolkit:ListPicker>
+                -->
+                <toolkit:ListPicker x:Name="listPicker">
+                    <toolkit:ListPickerItem x:Name="Important_selected"
+                                            Content="Important" />
+                    <toolkit:ListPickerItem x:Name="Not_Important_selected"
+                                            Content="Not Important" />
+                </toolkit:ListPicker>
+                <toolkit:PhoneTextBox x:Name="editorPageNote"
+                                     Height="350"
+                                     VerticalAlignment="Stretch"
+                                     HorizontalAlignment="Stretch"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True"
+                                     Text="{Binding Note}" 
+                                      Hint="Task description"/>
+                
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True"
+                              IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/save.png"
+                                            Text="Save"
+                                            Click="Convert_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

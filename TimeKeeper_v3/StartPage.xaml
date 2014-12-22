@@ -1,0 +1,240 @@
+﻿<phone:PhoneApplicationPage x:Class="TimeKeeper_v3.StartPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            SupportedOrientations="PortraitOrLandscape"
+                            Orientation="Portrait"
+                            mc:Ignorable="d"
+                            shell:SystemTray.IsVisible="True">
+    <phone:PhoneApplicationPage.Background>
+        <ImageBrush Stretch="UniformToFill"
+                    ImageSource="/Images/TimeKeeper_bg2.png"
+                    Opacity="0.5" />
+    </phone:PhoneApplicationPage.Background>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill"
+                        ImageSource="/Images/TimeKeeper_bg2.png" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0"
+                    Margin="12,17,0,28">
+            <TextBlock Text="TimeKeeper"
+                       Style="{StaticResource PhoneTextNormalStyle}" />
+        </StackPanel>
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel"
+              Grid.Row="1"
+              Margin="12,0,12,0">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Width="225"
+                                HorizontalAlignment="Left"
+                                x:Name="spImportantSoon"
+                                Tap="Convert_Click">
+                        <Rectangle x:Name="importantSoonRect"
+                                   Margin="0,95,0,0"
+                                   Height="150"
+                                   Stroke="Transparent"
+                                   Width="193"
+                                   RadiusX="20"
+                                   RadiusY="20"
+                                   Opacity="0.495"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1"
+                                                     StartPoint="0.5,0">
+                                    <GradientStop Color="#FF001CD0"
+                                                  Offset="0" />
+                                    <GradientStop Color="#FF1EBDF1"
+                                                  Offset="1" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <TextBlock x:Name="importantSoonBtn"
+                                   Margin="0,-165,0,0"
+                                   TextWrapping="Wrap"
+                                   Text="Important [Soon]"
+                                   Width="100"
+                                   Height="100"
+                                   TextAlignment="Center"
+                                   Foreground="White"
+                                   FontFamily="Times New Roman" />
+                        <TextBlock x:Name="importantSoonCntText"
+                                   Margin="0,-90,0,0"
+                                   TextWrapping="Wrap"
+                                   Text="9"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="96"
+                                   FontFamily="David"
+                                   Foreground="White" />
+
+                    </StackPanel>
+                    <StackPanel Width="225"
+                                HorizontalAlignment="Right"
+                                x:Name="spImportantNotSoon"
+                                Tap="Convert_Click">
+                        <Rectangle x:Name="importantNotSoonRect"
+                                   Margin="0,95,0,0"
+                                   Height="150"
+                                   Stroke="Transparent"
+                                   Width="193"
+                                   RadiusX="20"
+                                   RadiusY="20"
+                                   Opacity="0.495"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1"
+                                                     StartPoint="0.5,0">
+                                    <GradientStop Color="#FF001CD0"
+                                                  Offset="0" />
+                                    <GradientStop Color="#FF1EBDF1"
+                                                  Offset="1" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <TextBlock x:Name="importantNotSoonBtn"
+                                   Margin="0,-175,0,0"
+                                   TextWrapping="Wrap"
+                                   Text="Important [Not Soon]"
+                                   Width="100"
+                                   Height="100"
+                                   TextAlignment="Center"
+                                   FontFamily="Times New Roman" />
+                        <TextBlock x:Name="importantNotSoonCntText"
+                                   Margin="0,-90,0,0"
+                                   TextWrapping="Wrap"
+                                   Text="9"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="96"
+                                   FontFamily="David"
+                                   Foreground="White" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,10"
+                            x:Name="spNotImportantSoon"
+                            Tap="Convert_Click">
+                    <StackPanel Width="225">
+                        <Rectangle x:Name="notImportantSoonRect"
+                                   Margin="0,0,0,0"
+                                   Height="150"
+                                   Stroke="Transparent"
+                                   Width="200"
+                                   RadiusX="20"
+                                   RadiusY="20"
+                                   Opacity="0.495"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1"
+                                                     StartPoint="0.5,0">
+                                    <GradientStop Color="#FF001CD0"
+                                                  Offset="0" />
+                                    <GradientStop Color="#FF1EBDF1"
+                                                  Offset="1" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <TextBlock x:Name="notImportantSoonBtn"
+                                   Margin="0,-150,0,0"
+                                   TextWrapping="Wrap"
+                                   Text="Not Important [Soon]"
+                                   Width="150"
+                                   Height="100"
+                                   TextAlignment="Center"
+                                   FontFamily="Times New Roman" />
+                        <TextBlock x:Name="notImportantSoonCntText"
+                                   Margin="0,-90,0,0"
+                                   TextWrapping="Wrap"
+                                   Text="9"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="96"
+                                   FontFamily="David"
+                                   Foreground="White" />
+                    </StackPanel>
+                    <StackPanel Width="225"
+                                x:Name="spNotImportantNotSoon"
+                                Tap="Convert_Click">
+                        <Rectangle x:Name="notImportantNotSoonRect"
+                                   Margin="0,0,0,0"
+                                   Height="150"
+                                   Stroke="Transparent"
+                                   Width="193"
+                                   RadiusX="20"
+                                   RadiusY="20"
+                                   Opacity="0.495"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1"
+                                                     StartPoint="0.5,0">
+                                    <GradientStop Color="#FF001CD0"
+                                                  Offset="0" />
+                                    <GradientStop Color="#FF1EBDF1"
+                                                  Offset="1" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <TextBlock x:Name="notImportantNotSoonBtn"
+                                   Margin="0,-160,0,0"
+                                   TextWrapping="Wrap"
+                                   Text="Not Important  [Not Soon]"
+                                   Width="150"
+                                   Height="100"
+                                   TextAlignment="center"
+                                   FontFamily="Times New Roman" />
+                        <TextBlock x:Name="notImportantNotSoonCntText"
+                                   Margin="0,-90,0,0"
+                                   TextWrapping="Wrap"
+                                   Text="9"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="96"
+                                   FontFamily="David"
+                                   Foreground="White" />
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True"
+                              IsMenuEnabled="True"
+                              BackgroundColor="#FF11377B">
+            <shell:ApplicationBarIconButton IconUri="/Images/add.png"
+                                            Text="New"
+                                            Click="Convert_Icon_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/feature.search.png"
+                                            Text="Search"
+                                            Click="Convert_Icon_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/feature.calendar.png"
+                                            Text="Calendar"
+                                            Click="Convert_Icon_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/feature.settings.png"
+                                            Text="Settings"
+                                            Click="Convert_Icon_Click" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="About" />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>
