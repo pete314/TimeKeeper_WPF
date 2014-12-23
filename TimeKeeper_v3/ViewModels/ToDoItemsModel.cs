@@ -205,7 +205,8 @@ namespace TimeKeeper_v3.ViewModels
          * This function does a search in the loaded ToDo...Items.title
          */
         public ToDoItemModel SearchItemsByTitle(string title) {
-            ToDoItemModel foundItem = this.Items.Where(f => f.Title.Contains(title)).FirstOrDefault();
+            //ToDoItemModel foundItem = this.Items.Where(f => f.Title.Contains(title)).FirstOrDefault();
+            ToDoItemModel foundItem = this.Items.Where(f => f.Title.ToLower().Contains(title.ToLower())).FirstOrDefault();
             return foundItem;
         }
 

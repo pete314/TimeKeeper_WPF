@@ -325,7 +325,16 @@
 
             Before shipping remove this XAML and the image itself.-->
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
-        
+        <StackPanel VerticalAlignment="Bottom">
+            <TextBox  x:Name="search_TextBox"
+                      Visibility="Collapsed"
+                      Height="72"
+                      TextWrapping="Wrap"
+                      Text="Search by title"
+                      KeyDown="startSearch_enter"
+                      GotFocus="searchTB_GotFocus" />
+
+        </StackPanel>
     </Grid>
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True"

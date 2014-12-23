@@ -124,12 +124,42 @@ namespace TimeKeeper_v3
             else if (sender.Equals(searchBtn))
             {
                 //SearchToDoModelItems();
-                //MessageBox.Show("Search button was pressed");
+                if (search_TextBox.Visibility == Visibility.Collapsed)
+                    search_TextBox.Visibility = Visibility.Visible;
+                else
+                    search_TextBox.Visibility = Visibility.Collapsed;
             }
             else if (sender.Equals(calendarBtn))
             {
                 MessageBox.Show("Calendar button was pressed");
             }
+        }
+        private void startSearch_enter(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                trySearch(search_TextBox.Text);
+            }
+        }//end Convert_click
+
+        private void trySearch(string searchTerm)
+        {
+
+            /*
+            var ravSearchResults = App.ViewModel.Items.Where(x => x.Title == searchTerm);
+            ObservableCollection<ToDoItemModel> searchResults = new ObservableCollection<ToDoItemModel>(ravSearchResults);
+            //searchResults.Count();
+            */
+
+            ToDoItemModel result = App.ViewModel.SearchItemsByTitle(searchTerm);
+            if (result == null)
+                MessageBox.Show("Nothing found!");
+            else
+                NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedItem=" + result.ID, UriKind.Relative));
+        }
+        private void searchTB_GotFocus(object sender, RoutedEventArgs e)
+        {
+            (sender as TextBox).SelectAll();
         }
 
         private void MarkDoneSelected_Click(object sender, RoutedEventArgs e)

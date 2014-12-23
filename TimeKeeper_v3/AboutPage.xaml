@@ -24,14 +24,13 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0"
                     Margin="12,17,0,28">
-            <TextBlock Text="TimeKeeper"
-                       Style="{StaticResource PhoneTextNormalStyle}" />
-            <TextBlock Text="About"
+			<TextBlock Text="About"
                        Margin="9,-7,0,0"
                        Style="{StaticResource PhoneTextTitle1Style}" 
-                       Foreground="Aqua"/>
-            <TextBlock TextWrapping="Wrap"
-                       Text="TextBlock" />
+                       Foreground="White" FontFamily="Times New Roman"/>
+            <TextBlock Text="TimeKeeper"
+                       Style="{StaticResource PhoneTextNormalStyle}" HorizontalAlignment="Center" Foreground="#FFF8FFF6" FontFamily="Times New Roman" FontSize="24" />
+            
 
         </StackPanel>
 
@@ -39,7 +38,46 @@
         <Grid x:Name="ContentPanel"
               Grid.Row="1"
               Margin="12,0,12,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions> 
+			<ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Row="1">
+			<StackPanel>
+				<StackPanel Margin="0,0,0,10">
+					<TextBlock TextWrapping="Wrap" FontFamily="Times New Roman" FontSize="18.667" Foreground="#FFE71313">
+						<Run Text="THIS IS ONLY A COLLEGE PROJECT FOR GMIT, IAD."/>
+						<LineBreak/>
+						<Run/>
+					</TextBlock>
+				</StackPanel>
 
+				<StackPanel Margin="0,0,0,10">
+					<TextBlock TextWrapping="Wrap" Text="Application details" FontFamily="Aharoni" FontSize="24"/>
+					<TextBlock TextWrapping="Wrap" FontFamily="Times New Roman" FontSize="18.667">
+						<Run Text="The main purpose of the application is to help manage time by organizing the &quot;things to do&quot; items by importance and by due date. "/>
+						<Run Text="The application was built and tested on windows 8 phone. "/>
+					</TextBlock>
+				
+				</StackPanel>
+				<StackPanel>
+					<TextBlock TextWrapping="Wrap" Text="Limited Warranty" FontSize="24" FontFamily="Aharoni"/>
+					<TextBlock TextWrapping="Wrap" FontSize="18.667" FontFamily="Times New Roman">
+						<Run/>
+						<LineBreak/>
+						<Run Text="NO WARRANTIES."/>
+						<LineBreak/>
+						<Run Text="The Author of this Software expressly disclaims any warranty for the SOFTWARE PRODUCT. The SOFTWARE PRODUCT and any related documentation is provided “as is” without warranty of any kind, either express or implied, including, without limitation, the implied warranties or merchantability, fitness for a particular purpose, or noninfringement. The entire risk arising out of use or performance of the SOFTWARE PRODUCT remains with you."/>
+						<LineBreak/>
+						<Run/>
+						<LineBreak/>
+						<Run Text="NO LIABILITY FOR DAMAGES."/>
+						<LineBreak/>
+						<Run Text="In no event shall the author of this Software be liable for any special, consequential, incidental or indirect damages whatsoever (including, without limitation, damages for loss of business profits, business interruption, loss of business information, or any other pecuniary loss) arising out of the use of or inability to use this product, even if the Author of this Software is aware of the possibility of such damages and known defects."/>
+					</TextBlock>
+				</StackPanel>
+			</StackPanel>
+			</ScrollViewer>
         </Grid>
     </Grid>
 

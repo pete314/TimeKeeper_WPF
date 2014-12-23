@@ -8,6 +8,9 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using System.Collections.ObjectModel;
+using TimeKeeper_v3.ViewModels;
 
 namespace TimeKeeper_v3
 {
@@ -56,8 +59,70 @@ namespace TimeKeeper_v3
         //Handle navigation bar icon click
         private void Convert_Icon_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This Works");
+            //appBar hidden element variables
+            var aboutBtn = this.ApplicationBar.MenuItems[0];
+
+            //appBar button elements
+            var addBtn = this.ApplicationBar.Buttons[0];
+            var searchBtn = this.ApplicationBar.Buttons[1];
+            var calendarBtn = this.ApplicationBar.Buttons[2];
+            var settingsBtn = this.ApplicationBar.Buttons[2];
+
+            //check which button was clicked
+            if (sender.Equals(aboutBtn))
+            {
+                NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative));
+            }
+            else if (sender.Equals(addBtn))
+            {
+                //Drop user to empty editorPage
+                NavigationService.Navigate(new Uri("/editorPage.xaml", UriKind.Relative));
+            }
+            else if (sender.Equals(searchBtn))
+            {
+                //SearchToDoModelItems();
+                if (search_TextBox.Visibility == Visibility.Collapsed)
+                    search_TextBox.Visibility = Visibility.Visible;
+                else
+                    search_TextBox.Visibility = Visibility.Collapsed;
+            }
+            else if (sender.Equals(calendarBtn))
+            {
+                MessageBox.Show("Calendar button was pressed");
+            }
+            else if (sender.Equals(settingsBtn))
+            {
+                MessageBox.Show("Calendar button was pressed");
+            }
+        }
+
+        private void startSearch_enter(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                trySearch(search_TextBox.Text);
+            }
         }//end Convert_click
+
+        private void trySearch(string searchTerm) {
+            
+            /*
+            var ravSearchResults = App.ViewModel.Items.Where(x => x.Title == searchTerm);
+            ObservableCollection<ToDoItemModel> searchResults = new ObservableCollection<ToDoItemModel>(ravSearchResults);
+            //searchResults.Count();
+            */
+
+            ToDoItemModel result = App.ViewModel.SearchItemsByTitle(searchTerm);
+            if (result == null)
+                MessageBox.Show("Nothing found!");
+            else
+                NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedItem=" + result.ID, UriKind.Relative));
+        }
+
+        private void searchTB_GotFocus(object sender, RoutedEventArgs e)
+        {
+            (sender as TextBox).SelectAll();
+        }
 
         //handle appbar button clicks
     }

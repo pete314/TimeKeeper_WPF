@@ -214,6 +214,16 @@
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
+            <StackPanel VerticalAlignment="Bottom">
+                <TextBox  x:Name="search_TextBox"
+                          Visibility="Collapsed"
+                          Height="72"
+                          TextWrapping="Wrap"
+                          Text="Search by title"
+                          KeyDown="startSearch_enter"
+                          GotFocus="searchTB_GotFocus"/>
+
+            </StackPanel>
         </Grid>
     </Grid>
     <phone:PhoneApplicationPage.ApplicationBar>
@@ -233,7 +243,8 @@
                                             Text="Settings"
                                             Click="Convert_Icon_Click" />
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="About" />
+                <shell:ApplicationBarMenuItem Text="About"
+                                              Click="Convert_Icon_Click" />
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
