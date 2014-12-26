@@ -97,26 +97,13 @@ namespace TimeKeeper_v3
         //handle appbar button clicks
         private void Convert_Click(object sender, EventArgs e)
         {
-            //appBar hidden element variables
-            var exportBtn = this.ApplicationBar.MenuItems[0];
-            var aboutBtn = this.ApplicationBar.MenuItems[1];
-
+            
             //appBar button elements
             var addBtn = this.ApplicationBar.Buttons[0];
             var searchBtn = this.ApplicationBar.Buttons[1];
-            var calendarBtn = this.ApplicationBar.Buttons[2];
 
             //check which button was clicked
-            if (sender.Equals(exportBtn))
-            {
-                //MessageBox.Show("Export Btn was clciked!");
-                LaunchExcel();
-            }
-            else if (sender.Equals(aboutBtn))
-            {
-                MessageBox.Show("About Btn was clciked!");
-            }
-            else if (sender.Equals(addBtn))
+            if (sender.Equals(addBtn))
             {
                 //Drop user to empty editorPage
                 NavigationService.Navigate(new Uri("/editorPage.xaml", UriKind.Relative));
@@ -129,11 +116,8 @@ namespace TimeKeeper_v3
                 else
                     search_TextBox.Visibility = Visibility.Collapsed;
             }
-            else if (sender.Equals(calendarBtn))
-            {
-                MessageBox.Show("Calendar button was pressed");
-            }
         }
+
         private void startSearch_enter(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -162,17 +146,6 @@ namespace TimeKeeper_v3
             (sender as TextBox).SelectAll();
         }
 
-        private void MarkDoneSelected_Click(object sender, RoutedEventArgs e)
-        {
-            Guide.BeginShowMessageBox(
-                "Please confirm",
-                "Are you sure you want to mark this item as done?",
-                new string[] { "Yes", "No" }, 1,
-                MessageBoxIcon.Warning,
-                new AsyncCallback(OnMessageBoxAction),
-                null);
-        }
-
         private void DeleteSelected_Click(object sender, RoutedEventArgs e)
         {
             Guide.BeginShowMessageBox(
@@ -192,11 +165,6 @@ namespace TimeKeeper_v3
                     Deployment.Current.Dispatcher.BeginInvoke(
                                                         () => DeletePart2());
                     break;
-                case 1:
-                    Deployment.Current.Dispatcher.BeginInvoke(
-                                                        () => MarkDonePart2());
-                    //MessageBox.Show("Let's fire the marked method");
-                    break;
                 default:
                     break;
             }
@@ -207,10 +175,6 @@ namespace TimeKeeper_v3
             await App.ViewModel.RemoveToDoItem(lastSelectedToDoItem);
         }
 
-        private async Task MarkDonePart2()
-        {
-             MessageBox.Show("Let's fire the marked method");
-        }
 
         /*
          * Exporting to excel

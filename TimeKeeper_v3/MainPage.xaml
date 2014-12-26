@@ -73,8 +73,6 @@
                                     <toolkit:ContextMenu>
                                         <toolkit:MenuItem Header="Delete Item"
                                                           Click="DeleteSelected_Click" />
-                                        <toolkit:MenuItem Header="Mark As Done"
-                                                          Click="MarkDoneSelected_Click" />
                                     </toolkit:ContextMenu>
                                 </toolkit:ContextMenuService.ContextMenu>
                                 <Grid>
@@ -348,12 +346,6 @@
             <shell:ApplicationBarIconButton IconUri="/Images/feature.calendar.png"
                                             Text="Calendar"
                                             Click="Convert_Click" />
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="Export"
-                                              Click="Convert_Click" />
-                <shell:ApplicationBarMenuItem Text="About"
-                                              Click="Convert_Click" />
-            </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>
