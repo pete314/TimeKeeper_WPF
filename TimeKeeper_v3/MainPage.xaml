@@ -39,7 +39,7 @@
          -->
 
         <!--Pivot Control-->
-        <phone:Pivot x:Name="pivotControl" Title="Time Keeper"
+        <phone:Pivot Name="pivotControl" Title="Time Keeper"
                      FontSize="25"
                      ItemsSource="{Binding}">
             <phone:Pivot.HeaderTemplate>
@@ -84,6 +84,9 @@
                                         <TextBlock Text="{Binding Title}"
                                                    TextWrapping="Wrap"
                                                    Style="{StaticResource PhoneTextExtraLargeStyle}" />
+                                        <TextBlock Text="{Binding tdDate, StringFormat='MM/dd/yyyy'}"
+                                                   TextWrapping="Wrap"
+                                                   Style="{StaticResource PhoneTextSmallStyle}" />
                                         <TextBlock Text="{Binding FirstLine}"
                                                    TextWrapping="NoWrap"
                                                    TextTrimming="WordEllipsis"
@@ -189,6 +192,9 @@
                                         <TextBlock Text="{Binding Title}"
                                                    TextWrapping="Wrap"
                                                    Style="{StaticResource PhoneTextExtraLargeStyle}" />
+                                        <TextBlock Text="{Binding tdDate, StringFormat='MM/dd/yyyy'}"
+                                                   TextWrapping="Wrap"
+                                                   Style="{StaticResource PhoneTextSmallStyle}" />
                                         <TextBlock Text="{Binding FirstLine}"
                                                    TextWrapping="NoWrap"
                                                    TextTrimming="WordEllipsis"
@@ -240,6 +246,9 @@
                                         <TextBlock Text="{Binding Title}"
                                                    TextWrapping="Wrap"
                                                    Style="{StaticResource PhoneTextExtraLargeStyle}" />
+                                        <TextBlock Text="{Binding tdDate, StringFormat='MM/dd/yyyy'}"
+                                                   TextWrapping="Wrap"
+                                                   Style="{StaticResource PhoneTextSmallStyle}" />
                                         <TextBlock Text="{Binding FirstLine}"
                                                    TextWrapping="NoWrap"
                                                    TextTrimming="WordEllipsis"
@@ -342,9 +351,6 @@
                                             Click="Convert_Click" />
             <shell:ApplicationBarIconButton IconUri="/Images/feature.search.png"
                                             Text="Search"
-                                            Click="Convert_Click" />
-            <shell:ApplicationBarIconButton IconUri="/Images/feature.calendar.png"
-                                            Text="Calendar"
                                             Click="Convert_Click" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>

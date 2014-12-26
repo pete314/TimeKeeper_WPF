@@ -126,10 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <ApplicationDefinition Include="MainPage.xaml">
+    <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </ApplicationDefinition>
+    </Page>
     <Page Include="StartPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -171,7 +171,7 @@
     <Content Include="Images\questionmark.png" />
     <Content Include="Images\save.png" />
     <Content Include="Images\TimeKeeper_bg2.png" />
-    <Content Include="README_FIRST.txt" />
+    <Content Include="TimeKeeper_WPF_logo.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />

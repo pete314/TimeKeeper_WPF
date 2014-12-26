@@ -33,7 +33,7 @@
         <StackPanel Grid.Row="0"
                     Margin="12,17,0,28">
             <TextBlock Text="TimeKeeper"
-                       Style="{StaticResource PhoneTextNormalStyle}" />
+                       Style="{StaticResource PhoneTextNormalStyle}" HorizontalAlignment="Center" FontSize="48" FontFamily="Times New Roman" />
         </StackPanel>
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel"
@@ -235,12 +235,6 @@
                                             Click="Convert_Icon_Click" />
             <shell:ApplicationBarIconButton IconUri="/Images/feature.search.png"
                                             Text="Search"
-                                            Click="Convert_Icon_Click" />
-            <shell:ApplicationBarIconButton IconUri="/Images/feature.calendar.png"
-                                            Text="Calendar"
-                                            Click="Convert_Icon_Click" />
-            <shell:ApplicationBarIconButton IconUri="/Images/feature.settings.png"
-                                            Text="Settings"
                                             Click="Convert_Icon_Click" />
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="About"

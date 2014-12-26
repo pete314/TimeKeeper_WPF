@@ -49,6 +49,7 @@ namespace TimeKeeper_v3
             {
                 strItemIndex = NavigationContext.QueryString["pivIndex"].ToString();
                 pivotControl.SelectedIndex = Convert.ToInt32(strItemIndex);
+                
             }
         }
 

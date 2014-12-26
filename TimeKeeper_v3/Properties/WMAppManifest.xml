@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{fd4c5971-eb14-4e8a-ba01-232e2e9339b5}" Title="TimeKeeper_v3" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="TimeKeeper_v3 author" Description="Sample description" Publisher="TimeKeeper_v3" PublisherID="{5320532b-c358-41d6-99dd-e7aef9578a15}">
-    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+  <App xmlns="" ProductID="{fd4c5971-eb14-4e8a-ba01-232e2e9339b5}" Title="TimeKeeper" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Peter Nagy" Description="TimeKeeper is an application to help keep track about things to do." Publisher="PeterEndre" PublisherID="{5320532b-c358-41d6-99dd-e7aef9578a15}">
+    <IconPath IsRelative="true" IsResource="false">TimeKeeper_WPF_logo.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />

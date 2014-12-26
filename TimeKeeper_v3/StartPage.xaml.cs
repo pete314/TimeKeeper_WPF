@@ -65,8 +65,6 @@ namespace TimeKeeper_v3
             //appBar button elements
             var addBtn = this.ApplicationBar.Buttons[0];
             var searchBtn = this.ApplicationBar.Buttons[1];
-            var calendarBtn = this.ApplicationBar.Buttons[2];
-            var settingsBtn = this.ApplicationBar.Buttons[2];
 
             //check which button was clicked
             if (sender.Equals(aboutBtn))
@@ -85,14 +83,6 @@ namespace TimeKeeper_v3
                     search_TextBox.Visibility = Visibility.Visible;
                 else
                     search_TextBox.Visibility = Visibility.Collapsed;
-            }
-            else if (sender.Equals(calendarBtn))
-            {
-                MessageBox.Show("Calendar button was pressed");
-            }
-            else if (sender.Equals(settingsBtn))
-            {
-                MessageBox.Show("Calendar button was pressed");
             }
         }
 
